@@ -31,18 +31,18 @@ pipeline {
             }
         }
 
-        stage("Push the changed deployment file to Git") {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'GitHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh """
-                        git config --global user.name "j_nhk"
-                        git config --global user.email "nyanhtetkyaw@gmail.com"
-                        git add deployment.yaml
-                        git commit -m "Updated Deployment Manifest" || echo "No changes to commit"
-                        git push https://${USERNAME}:${PASSWORD}@github.com/nyanhtetkyaw/gitops main
-                    """
-                }
-            }
-        }
+        //stage("Push the changed deployment file to Git") {
+            //steps {
+                //withCredentials([usernamePassword(credentialsId: 'GitHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    //sh """
+                        //git config --global user.name "j_nhk"
+                        //git config --global user.email "nyanhtetkyaw@gmail.com"
+                        //git add deployment.yaml
+                        //git commit -m "Updated Deployment Manifest" || echo "No changes to commit"
+                        //git push https://${USERNAME}:${PASSWORD}@github.com/nyanhtetkyaw/gitops main
+                    //"""
+                //}
+            //}
+        //}
     }
 }
